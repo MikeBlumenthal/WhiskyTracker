@@ -2,6 +2,7 @@ package com.codeclan.example.WhiskyTracker;
 
 import com.codeclan.example.WhiskyTracker.controllers.DistilleryController;
 import com.codeclan.example.WhiskyTracker.controllers.WhiskyController;
+import com.codeclan.example.WhiskyTracker.models.Distillery;
 import com.codeclan.example.WhiskyTracker.models.Whisky;
 import com.codeclan.example.WhiskyTracker.repositories.DistilleryRepository.DistilleryRepository;
 import com.codeclan.example.WhiskyTracker.repositories.WhiskyRepository.WhiskyRepository;
@@ -29,6 +30,11 @@ public class WhiskyTrackerApplicationTests {
 	@Test
     public void canGetAllWhiskiesFrom2018(){
         List<Whisky> results = whiskyRepository.getAllWhiskiesForYear(2018);
+    }
+
+    @Test
+    public void canGetAllDistilleriesInSpeyside(){
+	    List<Distillery> results = distilleryRepository.getAllDistilleriesForRegion("Speyside");
     }
 
 }

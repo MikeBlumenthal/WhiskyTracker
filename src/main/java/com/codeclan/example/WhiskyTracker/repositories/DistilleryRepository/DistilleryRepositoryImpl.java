@@ -23,14 +23,10 @@ public class DistilleryRepositoryImpl implements DistilleryRepositoryCustom {
         List<Distillery> results = null;
         Session session = entityManager.unwrap(Session.class);
         Criteria cr = session.createCriteria(Distillery.class);
-        cr.add(Restrictions.eq("distillery.region", region));
+        cr.add(Restrictions.eq("region", region));
         results = cr.list();
         return results;
     }
-
-
-
-
 
 //TODO:get all distilleries with whiskies that are 12yearsold
 
