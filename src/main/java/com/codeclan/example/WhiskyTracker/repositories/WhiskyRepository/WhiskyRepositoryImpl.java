@@ -1,6 +1,7 @@
 package com.codeclan.example.WhiskyTracker.repositories.WhiskyRepository;
 
 
+import com.codeclan.example.WhiskyTracker.models.Distillery;
 import com.codeclan.example.WhiskyTracker.models.Whisky;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -24,10 +25,8 @@ public class WhiskyRepositoryImpl implements WhiskyRepositoryCustom {
         Session session = entityManager.unwrap(Session.class);
         Criteria cr = session.createCriteria(Whisky.class);
         cr.add(Restrictions.eq("year", year));
-        results =cr.list();
+        results = cr.list();
         return results;
     }
-
-//TODO:get all whisky from a particular region
 
 }
