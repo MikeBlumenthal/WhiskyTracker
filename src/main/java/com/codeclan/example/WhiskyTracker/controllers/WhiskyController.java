@@ -16,7 +16,7 @@ public class WhiskyController {
     @Autowired
     WhiskyRepository whiskyRepository;
 
-    @GetMapping(value = "year/{year}")
+    @GetMapping(value = "{year}")
     public List<Whisky> getWhiskiesFromYear(@PathVariable int year){
         return whiskyRepository.getAllWhiskiesForYear(year);
     }

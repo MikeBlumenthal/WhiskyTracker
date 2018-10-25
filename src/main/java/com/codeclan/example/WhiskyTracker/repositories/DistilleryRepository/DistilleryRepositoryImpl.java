@@ -29,19 +29,20 @@ public class DistilleryRepositoryImpl implements DistilleryRepositoryCustom {
     }
 
 //TODO:get all distilleries with whiskies that are 12yearsold
+    @Transactional
+    public List<Distillery> getAllDistilleriesWithWhiskyAged(int age){
+        List<Distillery> results = null;
+        Session session = entityManager.unwrap(Session.class);
+        Criteria cr = session.createCriteria(Distillery.class);
+        cr.createAlias("whiskies", "whisky");
+        cr.add(Restrictions.eq("whisky.age", age));
+        results = cr.list();
+        return results;
+    }
 
 
 //TODO:get all whiskies from a specific distillery of a specific age
 
 
-////TODO:get all whisky from a particular region
-//
-//    @Transactional
-//    public List<Whisky> getAllWhiskiesForRegion(String region){
-//        List<Whisky> results = null;
-//        Session session = entityManager.unwrap(Session.class);
-//        Criteria cr = session.createCriteria(Distillery.class);
-//        cr.createAlias("whiskies")
-//    }
 
 }

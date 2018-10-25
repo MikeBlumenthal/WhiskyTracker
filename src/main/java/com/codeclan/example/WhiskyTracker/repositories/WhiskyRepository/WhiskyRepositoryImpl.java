@@ -29,4 +29,18 @@ public class WhiskyRepositoryImpl implements WhiskyRepositoryCustom {
         return results;
     }
 
+////TODO:get all whisky from a particular region
+//
+//    @Transactional
+//    public List<Whisky> getAllWhiskiesForRegion(String region){
+//        List<Whisky> results = null;
+//        Session session = entityManager.unwrap(Session.class);
+//        Criteria cr = session.createCriteria(Whisky.class);
+//        cr.createAlias()
+//        cr.add(Restrictions.eq("region", region));
+//        results = cr.list();
+//        return results;
+//    }
+
+
 }
